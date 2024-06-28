@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import styles from "@/styles/components/section-progress-bar.module.scss";
 
 import { useLocation, useNavigate } from "react-router-dom";
@@ -15,6 +15,7 @@ export default function SectionProgress() {
 	const scrollProgress = useStore($globalStore, (store) => store.scrollProgress);
 	const visible = useStore($globalStore, (store) => store.aboutEnteredFromAbove);
 	const isMobile = useMediaQuery("only screen and (max-width: 700px)");
+	const hasMounted = useRef(false);
 
 	const indicators = useMemo(() => {
 		const currentHashIndex = NAVIGATION_SECTIONS.indexOf(hash.slice(1) || "home");
@@ -33,6 +34,11 @@ export default function SectionProgress() {
 	}, [hash, navigate]);
 
 	useEffect(() => {
+		if (!hasMounted.current) {
+			hasMounted.current = true;
+			return;
+		}
+
 		const navigateTo = (destination: string) => {
 			if (window.location.hash !== destination && !$globalStore.getState().beingAutoScrolled)
 				navigate(destination);

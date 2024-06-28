@@ -43,7 +43,11 @@ export default function HomeSection() {
 			<div id={styles["home-wrapper"]}>
 				<div
 					id={styles.home}
-					className={enterAnimationEnded ? "" : styles["home-entry-animation"]}
+					className={
+						!enterAnimationEnded && window.location.hash === "#home"
+							? styles["home-entry-animation"]
+							: ""
+					}
 					data-invert
 					{...css({
 						"&::before": {
@@ -62,7 +66,11 @@ export default function HomeSection() {
 				</div>
 				<div
 					id={styles.buttons}
-					className={enterAnimationEnded ? "" : styles["buttons-entry-animation"]}
+					className={
+						!enterAnimationEnded && window.location.hash === "#home"
+							? styles["buttons-entry-animation"]
+							: ""
+					}
 					style={{
 						opacity: enterAnimationEnded && reachedAboutSection ? 0 : enterAnimationEnded ? 1 : 0,
 						pointerEvents: reachedAboutSection ? "none" : "unset",

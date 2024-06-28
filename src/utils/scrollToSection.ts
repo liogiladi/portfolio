@@ -7,6 +7,7 @@ export default function scrollToSection(hash: string) {
 	if (section && container) {
 		$globalStore.setState({ beingAutoScrolled: true });
 		const rect = section.getBoundingClientRect();
+		console.log("hash", hash);
 
 		let position = container.scrollTop + rect.top;
 		if (rect.height <= window.innerHeight) {

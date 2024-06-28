@@ -9,6 +9,7 @@ import AboutSection from "@/components/sections/AboutSection";
 import SkillsSection from "@/components/sections/SkillsSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import SectionProgress from "@/components/SectionProgressBar";
+import scrollToSection from "@/utils/scrollToSection";
 
 export default function Index() {
 	const mainRef = useRef<HTMLElement>(null);
@@ -22,6 +23,8 @@ export default function Index() {
 	useEffect(() => {
 		// Share main element for global use
 		$globalStore.setState({ mainElement: mainRef.current });
+
+		scrollToSection(window.location.hash);
 	}, []);
 
 	return (
