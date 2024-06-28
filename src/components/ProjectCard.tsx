@@ -20,10 +20,7 @@ export default function ProjectCard(props: Project) {
 				{madeWith}
 			</header>
 			<div className={styles.preview}>
-				<img
-					src={props.thumbnailSrc || "src/assets/wallpaperflare.com_wallpaper.jpg"}
-					alt="project card preview picture"
-				/>
+				<img src={props.thumbnailSrc || "src/assets/alps.jpg"} alt="project card preview picture" />
 				<div className={styles.overlay}>
 					<p>{props.description}</p>
 				</div>
