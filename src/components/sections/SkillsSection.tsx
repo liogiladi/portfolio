@@ -1,4 +1,4 @@
-import { memo, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import styles from "@/styles/components/sections/skills-section.module.scss";
 import CssIcon from "@/components/icons/Css";
 import FigmaIcon from "@/components/icons/Figma";
@@ -38,7 +38,7 @@ const tools: Icon[] = [
 	{ name: "Adobe Illustrator", component: <IllustratorIcon /> },
 ];
 
-export default memo(function SkillsSection() {
+export default function SkillsSection() {
 	const [visible, setVisible] = useState(false);
 
 	const ref = useInViewRatio((ratio) => {
@@ -82,4 +82,4 @@ export default memo(function SkillsSection() {
 			</article>
 		</section>
 	);
-});
+}
