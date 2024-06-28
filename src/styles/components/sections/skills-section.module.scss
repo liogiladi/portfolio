@@ -1,0 +1,67 @@
+#skills-section {
+	display: flex;
+	padding: clamp(2rem, 5.2vw, 3rem);
+	gap: clamp(2rem, 5.2vw, 3rem);
+
+	h2 {
+		text-align: center;
+		width: 100%;
+	}
+
+	svg {
+		width: clamp(45px, 5.3vw, 70px);
+		aspect-ratio: 1 / 1;
+	}
+
+	article {
+		border-radius: 5px;
+
+		h3 {
+			width: 100%;
+			margin: 0;
+			margin-bottom: clamp(2rem, 8.2vw, 3rem);
+			font-size: clamp(2rem, 5.2vw, 2.5rem);
+			text-align: center;
+		}
+
+		.icons {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 3rem;
+
+			.icon-wrapper {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 1rem;
+				rotate: 0;
+				transform-origin: center;
+				cursor: pointer;
+				transition: transform 0.2s, rotate 0.3s;
+
+				&:hover {
+					transform: scale(1.2);
+				}
+
+				&:active {
+					animation: shake 0.3s infinite alternate ease-in-out;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 700px) {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+@keyframes shake {
+	0% {
+		rotate: 0deg;
+	}
+	100% {
+		rotate: 15deg;
+	}
+}
