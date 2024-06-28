@@ -46,7 +46,7 @@ export default function Menu() {
 					<a href="https://github.com/liogiladi">
 						<GitHub />
 					</a>
-					<a href="/src/assets/Resume.pdf" target="_blank">
+					<a href="/Lio Giladi Resume.pdf" target="_blank">
 						Résumé
 					</a>
 				</div>
