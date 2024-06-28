@@ -9,9 +9,9 @@ export default function ProjectsSection() {
 	const [headingVisible, setHeadingVisible] = useState(false);
 	const itemsVisible = useDebounce(headingVisible, 200);
 
-	const headingRef = useInViewRatio<HTMLHeadingElement>((ratio) => {
+	const ref = useInViewRatio((ratio) => {
 		const ratioFloored = Math.floor(ratio * 10);
-		setHeadingVisible(ratioFloored > 1);
+		setHeadingVisible(ratioFloored > 0);
 	});
 
 	const projects = useMemo(
@@ -20,9 +20,8 @@ export default function ProjectsSection() {
 	);
 
 	return (
-		<section id={styles["projects-section"]} data-hash="#projects">
+		<section ref={ref} id={styles["projects-section"]} data-hash="#projects">
 			<h2
-				ref={headingRef}
 				style={{
 					opacity: headingVisible ? 1 : 0,
 					transition: "0.3s",
