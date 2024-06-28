@@ -43,7 +43,7 @@ export default memo(function SkillsSection() {
 
 	const ref = useInViewRatio((ratio) => {
 		const ratioFloored = Math.floor(ratio * 10);
-		setVisible(ratioFloored > 2);
+		setVisible(ratioFloored > 1);
 	});
 
 	const skillsElements = useMemo(
