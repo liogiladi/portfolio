@@ -51,7 +51,7 @@ export default function AboutSection() {
 				})}
 			>
 				<div id={styles["img-wrapper"]} style={{ height: showRemark ? "100%" : 0 }}></div>
-				<a href="/src/assets/Resume.pdf" target="_blank">
+				<a href="../../src/assets/Resume.pdf" target="_blank">
 					View Résumé
 				</a>
 			</section>
