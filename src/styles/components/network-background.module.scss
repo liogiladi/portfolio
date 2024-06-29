@@ -2,10 +2,10 @@
 	mix-blend-mode: multiply;
 	position: fixed;
 	width: 100%;
+	background: var(--bright);
 
 	canvas {
 		opacity: 0.1;
-		background: var(--bright);
 		pointer-events: none;
 	}
 }
