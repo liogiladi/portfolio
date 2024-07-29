@@ -11,12 +11,12 @@ const PROJECTS_DATA: readonly Project[] = Object.freeze([
 	{
 		name: "Web OS",
 		madeWith: ["HTML", "CSS", "JavaScript", "Web Components"],
-		thumbnailSrc: "",
-		description: "Emulates a local operating system on a small scale.",
-		githubURL: "",
-		liveURL: "",
+		thumbnailSrc: "src/assets/web-os.png",
+		description: "Emulates a local operating system on a small scale.\n(Recommended for use on a computer as it is not fully adapted and not optimized for mobile at this time)",
+		githubURL: "https://github.com/liogiladi/web-os",
+		liveURL: "https://web-os-1998.vercel.app",
 	},
-	{
+/* 	{
 		name: "Clinic Family Visits",
 		madeWith: ["React", "Next.js", "TypeScript", "SCSS", "MySQL"],
 		thumbnailSrc: "",
@@ -31,7 +31,7 @@ const PROJECTS_DATA: readonly Project[] = Object.freeze([
 		description: "Book",
 		githubURL: "",
 		liveURL: "",
-	},
+	}, */
 ]);
 
 export default PROJECTS_DATA;
