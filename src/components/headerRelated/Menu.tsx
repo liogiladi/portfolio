@@ -40,7 +40,7 @@ export default function Menu() {
 				<ul>{links}</ul>
 
 				<div id={styles.social}>
-					<a href="https://il.linkedin.com/in/lio-giladi-37a17a267v">
+					<a href="https://www.linkedin.com/in/lio-giladi">
 						<LinkedIn />
 					</a>
 					<a href="https://github.com/liogiladi">
