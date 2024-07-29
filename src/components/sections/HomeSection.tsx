@@ -44,7 +44,7 @@ export default function HomeSection() {
 				<div
 					id={styles.home}
 					className={
-						!enterAnimationEnded && window.location.hash === "#home"
+						(!enterAnimationEnded && window.location.hash === "#home") || !window.location.hash
 							? styles["home-entry-animation"]
 							: ""
 					}
