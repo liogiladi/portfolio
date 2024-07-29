@@ -1,3 +1,3 @@
 # Portfolio page
 
-Enlist my skills and my recent projects.
+Enlist my skills and recent projects.
