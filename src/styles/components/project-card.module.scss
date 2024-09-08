@@ -11,6 +11,15 @@
 			font-size: 1.4rem;
 		}
 
+		span {
+			position: absolute;
+			right: 0;
+			top: 0;
+			font-weight: 700;
+			font-size: 1.2rem;
+			cursor: default;
+		}
+
 		ul {
 			list-style: none;
 			display: flex;
@@ -84,6 +93,20 @@
 				outline-offset: 0;
 				outline-width: 5px;
 			}
+		}
+	}
+
+	@media screen and (max-width: 600px) {
+		header ul {
+			font-size: 0.8rem;
+		}
+
+		.links a {
+			font-size: 1rem;
+		}
+
+		.overlay p {
+			font-size: 0.7rem;
 		}
 	}
 }
