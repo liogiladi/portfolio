@@ -35,7 +35,10 @@ export default function Menu() {
 	}, [navigate, hash]);
 
 	return (
-		<div id={styles.menu} style={{ transform: `translateX(${isVisible ? 0 : "100vw"})` }}>
+		<div
+			id={styles.menu}
+			style={{ transform: `translateX(${isVisible ? 0 : "100vw"})` }}
+		>
 			<nav>
 				<ul>{links}</ul>
 

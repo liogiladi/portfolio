@@ -32,6 +32,11 @@
 		}
 	}
 
+	&[data-mobile="true"] #projects article::before {
+		background-color: var(--dark);
+		mix-blend-mode: unset !important;
+	}
+
 	#projects {
 		position: relative;
 		display: grid;
