@@ -17,13 +17,10 @@ export default function Index() {
 		useCallback(() => {
 			if ($globalStore.getState().beingAutoScrolled)
 				$globalStore.setState({ beingAutoScrolled: false });
-		}, []),
+		}, [])
 	);
 
 	useEffect(() => {
-		// Share main element for global use
-		$globalStore.setState({ mainElement: mainRef.current });
-
 		scrollToSection(window.location.hash);
 	}, []);
 
@@ -35,10 +32,12 @@ export default function Index() {
 				id={styles["index-page"]}
 				onScroll={(e) => {
 					const scrollHeight = Math.floor(
-						e.currentTarget.scrollHeight - e.currentTarget.clientHeight,
+						e.currentTarget.scrollHeight -
+							e.currentTarget.clientHeight
 					);
 					$globalStore.setState({
-						scrollProgress: (e.currentTarget.scrollTop / scrollHeight) * 100,
+						scrollProgress:
+							(e.currentTarget.scrollTop / scrollHeight) * 100,
 					});
 					handleEndScroll();
 				}}

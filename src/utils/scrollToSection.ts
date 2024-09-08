@@ -2,18 +2,17 @@ import $globalStore from "@/utils/globalStore";
 
 export default function scrollToSection(hash: string) {
 	const section = document.querySelector(`section[data-hash='${hash}']`);
-	const container = $globalStore.getState().mainElement;
 
-	if (section && container) {
+	if (section) {
 		$globalStore.setState({ beingAutoScrolled: true });
 		const rect = section.getBoundingClientRect();
 
-		let position = container.scrollTop + rect.top;
+		let position = document.documentElement.scrollTop + rect.top;
 		if (rect.height <= window.innerHeight) {
 			position -= (window.innerHeight - rect.height) / 2;
 		}
 
-		container.scrollTo({
+		window.scrollTo({
 			behavior: "smooth",
 			top: position,
 		});
