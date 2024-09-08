@@ -14,12 +14,17 @@
 }
 
 html,
-#root,
 body,
 main {
 	margin: 0;
 	width: 100vw;
 	height: 100vh;
+}
+
+body {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 100dvh;
 }
 
 *[data-invert] {
