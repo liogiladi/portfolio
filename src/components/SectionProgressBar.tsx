@@ -12,13 +12,21 @@ import $globalStore from "@/utils/globalStore";
 export default function SectionProgress() {
 	const { hash } = useLocation();
 	const navigate = useNavigate();
-	const scrollProgress = useStore($globalStore, (store) => store.scrollProgress);
-	const visible = useStore($globalStore, (store) => store.aboutEnteredFromAbove);
+	const scrollProgress = useStore(
+		$globalStore,
+		(store) => store.scrollProgress
+	);
+	const visible = useStore(
+		$globalStore,
+		(store) => store.aboutEnteredFromAbove
+	);
 	const isMobile = useMediaQuery("only screen and (max-width: 700px)");
 	const hasMounted = useRef(false);
 
 	const indicators = useMemo(() => {
-		const currentHashIndex = NAVIGATION_SECTIONS.indexOf(hash.slice(1) || "home");
+		const currentHashIndex = NAVIGATION_SECTIONS.indexOf(
+			hash.slice(1) || "home"
+		);
 
 		return NAVIGATION_SECTIONS.map((name, index) => (
 			<span
@@ -40,7 +48,10 @@ export default function SectionProgress() {
 		}
 
 		const navigateTo = (destination: string) => {
-			if (window.location.hash !== destination && !$globalStore.getState().beingAutoScrolled)
+			if (
+				window.location.hash !== destination &&
+				!$globalStore.getState().beingAutoScrolled
+			)
 				navigate(destination);
 		};
 
@@ -68,9 +79,11 @@ export default function SectionProgress() {
 	return (
 		<div
 			id={styles["section-progress"]}
-			style={{ opacity: visible ? 1 : 0, pointerEvents: visible ? "unset" : "none" }}
+			style={{
+				opacity: visible ? 1 : 0,
+				pointerEvents: visible ? "unset" : "none",
+			}}
 		>
-			<div id={styles.progress} />
 			{indicators}
 		</div>
 	);
