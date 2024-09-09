@@ -7,7 +7,10 @@ import $globalStore from "@/utils/globalStore";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 export default function AboutSection() {
-	const enterFromAbove = useStore($globalStore, (store) => store.aboutEnteredFromAbove);
+	const enterFromAbove = useStore(
+		$globalStore,
+		(store) => store.aboutEnteredFromAbove
+	);
 
 	const [showRemark, setShowRemark] = useState(false);
 	const remarkRef = useInViewRatio((ratio) => {
@@ -22,21 +25,31 @@ export default function AboutSection() {
 			<section style={{ opacity: enterFromAbove ? 1 : 0 }}>
 				<h2>About</h2>
 				<p>
-					In recent years, I found my love in web development and was given the opportunity to
-					specialize in it during my military service at the IDF as a full-stack web developer.
+					In recent years, I found my love in web development and was
+					given the opportunity to specialize in it during my military
+					service at the IDF as a full-stack web developer.
 				</p>
 				<p>
-					Alongside the technological aspect, to a large extent, I also have an artistic side,
-					through which I was privileged to contribute a portion of my service as a UIUX designer
-					for various systems.
+					Alongside the technological aspect, to a large extent, I
+					also have an artistic side, through which I was privileged
+					to contribute a portion of my service as a UIUX designer for
+					various systems.
 				</p>
 				<p id={styles.conclusion}>
-					<span>My characteristics - orderly, efficient, and dedicated.</span>
+					<span>
+						My characteristics - orderly, efficient, and dedicated.
+					</span>
 					<br />
 					<br />
-					<span ref={remarkRef} style={{ width: showRemark ? "100%" : "0%", transition: "0.4s" }}>
-						&nbsp;&nbsp;Looking forward to the next{isMobile ? <br /> : ""} opportunity
-						:)&nbsp;&nbsp;
+					<span
+						ref={remarkRef}
+						style={{
+							width: showRemark ? "100%" : "0%",
+							transition: "0.4s",
+						}}
+					>
+						&nbsp;&nbsp;Looking forward to the next
+						{isMobile ? <br /> : ""} opportunity :)&nbsp;&nbsp;
 					</span>
 				</p>
 			</section>
@@ -50,10 +63,10 @@ export default function AboutSection() {
 					},
 				})}
 			>
-				<div id={styles["img-wrapper"]} style={{ height: showRemark ? "100%" : 0 }}></div>
-				<a href="/Lio Giladi Resume.pdf" target="_blank">
-					View Résumé
-				</a>
+				<div
+					id={styles["img-wrapper"]}
+					style={{ height: showRemark ? "100%" : 0 }}
+				></div>
 			</section>
 		</section>
 	);

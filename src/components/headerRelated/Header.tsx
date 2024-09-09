@@ -17,9 +17,6 @@ export default function Header() {
 				</>
 			) : (
 				<div id={styles.links}>
-					<a id={styles.resume} href="/Lio Giladi Resume.pdf" target="_blank">
-						Résumé
-					</a>
 					<a href="https://www.linkedin.com/in/lio-giladi">
 						<LinkedIn />
 					</a>
